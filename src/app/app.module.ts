@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserModuleModule } from './user-module/user-module.module'
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AdminComponent,
     UserComponent,
     EmployeeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModuleModule
   ],
   exports:[
     AdminComponent,
