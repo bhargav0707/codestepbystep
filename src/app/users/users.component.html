@@ -1,0 +1,18 @@
+<div class="col-sm-6">
+    <form #userForm ="ngForm" (ngSubmit)="getData(userForm.value)">
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" required #email="ngModel" class="form-control" ngModel  name="email" placeholder="Enter email">
+        <span *ngIf="email.invalid && (email.dirty || email.touched)">Email is Required</span>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" required #password="ngModel" class="form-control" ngModel  name="password" placeholder="Password">
+        <span *ngIf="password.invalid && (password.dirty || password.touched)">password is Required</span>
+      </div>
+      <button [disabled]="userForm.invalid "type="submit" class="btn btn-primary">Submit</button>
+    <div id="link">
+      <button type="submit" class="btn btn-success" routerLink="/admin" >Admin Form</button>
+    </div>
+    </form>
+    </div>
