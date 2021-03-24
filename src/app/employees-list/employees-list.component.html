@@ -1,0 +1,27 @@
+<h3> *** Employee Details *** </h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Employeename</th>
+        <th scope="col">EmployeeSalary</th>
+        <th scope="col">EmployeeAge</th>
+        <th scope="col">ProfileImage</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let item of listData">
+        <td>{{item.id}}</td>
+        <td>{{item.employee_name}}</td>
+        <td>{{item.employee_salary}}</td>
+        <td>{{item.employee_age}}</td>
+        <td>{{item.profile_image}}</td>
+        <td><i (click)="deleteEmp(item.id)" class="fa fa-trash"></i>|
+          <a routerLink="/update/{{item.id}}"> <i class="fa fa-edit"></i></a></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+  
