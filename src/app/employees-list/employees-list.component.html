@@ -18,8 +18,7 @@
         <td>{{item.employee_age}}</td>
         <td>{{item.profile_image}}</td>
         <td><i (click)="deleteEmp(item.id)" class="fa fa-trash"></i>|
-          <a routerLink="/update/{{item.id}}"> <i class="fa fa-edit"></i></a></td>
-        
+          <a (click)="openDialog()"> <i class="fa fa-edit"></i></a></td>
       </tr>
     </tbody>
   </table>

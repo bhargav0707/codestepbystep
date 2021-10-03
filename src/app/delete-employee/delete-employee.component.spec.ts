@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DeleteEmployeeComponent } from './delete-employee.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DeleteEmployeeComponent', () => {
   let component: DeleteEmployeeComponent;
@@ -8,9 +9,10 @@ describe('DeleteEmployeeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteEmployeeComponent ]
+      declarations: [DeleteEmployeeComponent],
+      imports: [HttpClientTestingModule],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'
 import { from } from 'rxjs';
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyModalComponent } from './my-modal/my-modal.component';
+import { MaterialModule } from './material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,16 +25,19 @@ import { DeleteEmployeeComponent } from './delete-employee/delete-employee.compo
     LoginFormComponent,
     RegistrationFormComponent,
     EmployeesListComponent,
-    DeleteEmployeeComponent
+    DeleteEmployeeComponent,
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MyModalComponent]
 })
 export class AppModule { }

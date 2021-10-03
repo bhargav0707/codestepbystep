@@ -18,7 +18,7 @@ export class UpdateEmployeeComponent implements OnInit {
     profile_image: new FormControl('')
   })
   constructor(private router: ActivatedRoute, private employeeService: EmployeeServiceService) { }
-  alert:boolean=false;
+  alert: boolean = false;
   ngOnInit(): void {
     this.employeeService.getEmployee(this.router.snapshot.params.id).
       subscribe((result: any) => {
@@ -29,18 +29,18 @@ export class UpdateEmployeeComponent implements OnInit {
           profile_image: result['profile_image'],
         })
       })
-     
-  }
-  updateData(){
-    console.log(this.editForm.value);
-   this.employeeService.updateEmployee(this.router.snapshot.params.id,this.editForm.value).subscribe((result)=>{
-    console.log(result);
-   })
-   this.alert=true;
-   this.editForm.reset({});
   }
 
-  closeAlert(){
+  updateData() {
+    console.log(this.editForm.value);
+    this.employeeService.updateEmployee(this.router.snapshot.params.id, this.editForm.value).subscribe((result) => {
+      console.log(result);
+    })
+    this.alert = true;
+    this.editForm.reset({});
+  }
+
+  closeAlert() {
     this.alert = false;
-     }
+  }
 }

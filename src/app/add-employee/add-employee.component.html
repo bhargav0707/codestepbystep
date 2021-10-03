@@ -3,26 +3,41 @@
     <form [formGroup] ="entryForm" (ngSubmit)="collectData()">
         <div *ngIf="alert" class="alert alert-success alert-dismissible fade show col-sm-6" role="alert">
             <strong>Success Message</strong> You entered data successfully!
-            <button (click)="closeAlert() "type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="form-group col-sm-4">
             <label>Employee Name</label>
             <input type="text" class="form-control" formControlName="employee_name" placeholder="Employee Name">
+            <span class="text-danger"
+            *ngIf="(registerFormControl.employee_name.touched) && registerFormControl.employee_name.errors?.required">
+            Name is required
+        </span>
         </div>
         <div class="form-group col-sm-4">
             <label>EmployeeSalary</label>
             <input type="text" class="form-control"  formControlName="employee_salary" placeholder="EmployeeSalary">
+            <span class="text-danger"
+            *ngIf="(registerFormControl.employee_salary.touched) && registerFormControl.employee_salary.errors?.required">
+            Name is required
+        </span>
         </div>
         <div class="form-group col-sm-4">
                 <label>EmployeeAge</label>
                 <input type="text" class="form-control"  formControlName="employee_age" placeholder="EmployeeAge">
+                <span class="text-danger"
+            *ngIf="(registerFormControl.employee_age.touched) && registerFormControl.employee_age.errors?.required">
+            Name is required
+        </span>
             </div>
         <div class="form-group col-sm-4">
             <label>ProfileImage</label>
             <input type="text" class="form-control"  formControlName="profile_image" placeholder="ProfileImage">
+            <span class="text-danger"
+            *ngIf="(entryForm.controls.profile_image.touched)">
+            </span>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">Submit</button>
     </form>
 </div>

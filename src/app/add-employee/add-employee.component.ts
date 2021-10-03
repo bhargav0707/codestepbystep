@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
@@ -9,27 +9,32 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class AddEmployeeComponent implements OnInit {
 
-alert:boolean=false;
+  alert = false;
 
   entryForm = new FormGroup({
-    employee_name: new FormControl(''),
-    employee_salary: new FormControl(''),
-    employee_age: new FormControl(''),
+    employee_name: new FormControl('', Validators.required),
+    employee_salary: new FormControl('', Validators.required),
+    employee_age: new FormControl('', Validators.required),
     profile_image: new FormControl('')
   })
   constructor(private emp: EmployeeServiceService) { }
 
   ngOnInit(): void {
   }
- collectData()
- {
-   this.emp.saveEmployee(this.entryForm.value).subscribe((result)=>{
-     console.warn(result);
-   })
-   this.alert=true;
-   this.entryForm.reset({});
- }
- closeAlert(){
-this.alert = false;
- }
+
+  get registerFormControl() {
+    return this.entryForm.controls;
+  }
+
+  collectData() {
+    this.emp.saveEmployee(this.entryForm.value).subscribe((result) => {
+      console.warn(result);
+    })
+    this.alert = true;
+    this.entryForm.reset();
+  }
+
+  closeAlert() {
+    this.alert = false;
+  }
 }

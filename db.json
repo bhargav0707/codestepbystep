@@ -1,25 +1,18 @@
 {
   "posts": [
     {
-      "employee_name": "Bhagya Rani ",
-      "employee_salary": "1234569",
-      "employee_age": "23",
-      "profile_image": "excellent",
-      "id": 27
-    },
-    {
-      "employee_name": "sukanya kottala",
-      "employee_salary": "7894561",
-      "employee_age": "23",
-      "profile_image": "v.excellent",
-      "id": 28
-    },
-    {
-      "employee_name": "Bhargav kottala",
-      "employee_salary": "55127",
-      "employee_age": "26",
+      "employee_name": "Bhargav Kumar Kottala",
+      "employee_salary": "75000",
+      "employee_age": "27",
       "profile_image": "good",
-      "id": 29
+      "id": 1
+    },
+    {
+      "employee_name": "Kottala Sukanya",
+      "employee_salary": "100000",
+      "employee_age": "24",
+      "profile_image": "good",
+      "id": 2
     }
   ]
 }

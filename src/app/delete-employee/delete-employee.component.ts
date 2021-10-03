@@ -8,10 +8,10 @@ import { EmployeeServiceService } from '../employee-service.service';
 })
 export class DeleteEmployeeComponent implements OnInit {
 
-  constructor(private service:EmployeeServiceService) { }
+  constructor(private service: EmployeeServiceService) { }
 
   ngOnInit(): void {
   }
 
-  
+
 }

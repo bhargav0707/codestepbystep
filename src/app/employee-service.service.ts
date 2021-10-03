@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class EmployeeServiceService {
   apiUrl = 'http://localhost:3000/posts';
+  
   constructor(private http : HttpClient) {}
   getList(){
     // console.warn("some data to be shown");
